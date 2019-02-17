@@ -11,6 +11,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { CustomDirectiveDirective } from '../custom-directive.directive';
 import { CustomPipePipe } from '../custom-pipe.pipe';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustomPipePipe } from '../custom-pipe.pipe';
     EmployeeFormComponent,
     EmployeeListComponent,
     CustomDirectiveDirective,
-    CustomPipePipe
+    CustomPipePipe,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
