@@ -1,0 +1,13 @@
+<table>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Address</th>
+
+  <tr *ngFor="let employee of employeeList">
+    <td> {{employee.firstName | customPipe : ['true', 'A']}}</td>
+    <td>{{employee.lastName| customPipe:  ['false', 'B', 'C']}}</td>
+    <td>{{employee.address}}</td>
+  </tr>
+</table>
+
+<button type="button" (click)="goBack()">Go Back</button>
