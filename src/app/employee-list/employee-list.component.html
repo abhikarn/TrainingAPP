@@ -3,7 +3,7 @@
   <th>Last Name</th>
   <th>Address</th>
 
-  <tr *ngFor="let employee of employeeList">
+  <tr *ngFor="let employee of employeeList; let i =index">
     <td> {{employee.firstName | customPipe : ['true', 'A']}}</td>
     <td>{{employee.lastName| customPipe:  ['false', 'B', 'C']}}</td>
     <td>{{employee.address}}</td>

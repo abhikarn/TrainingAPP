@@ -1,14 +1,19 @@
-<div>
-  First Name : <input type="text" appCustomDirective [conditionForFocus] = "false"  [(ngModel)] ="employee.firstName" *ngIf="showControl">
-</div>
-<p></p>
-<div>
-  Last Name : <input type="text" appCustomDirective [(ngModel)] ="employee.lastName">
-</div>
-<p></p>
 
-<div>
-  Address : <textarea appCustomDirective [(ngModel)] ="employee.address"> </textarea>
-</div>
-<p></p>
-<button type="button" (click)="doSave()">Save </button>
+<form [formGroup] = "employeeForm" (ngSubmit) = "submitForm($event)">
+  <div>
+    First Name : <input type="text"
+     
+       formControlName ="firstName" *ngIf="showControl">
+  </div>
+  <p></p>
+  <div>
+    Last Name : <input type="text"  formControlName ="lastName">
+  </div>
+  <p></p>
+  
+  <div>
+    Address : <textarea   formControlName ="address"> </textarea>
+  </div>
+  <p></p>
+  <button type="submit">Save </button>
+</form>

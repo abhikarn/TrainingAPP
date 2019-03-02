@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SharedService } from './shared.service';
@@ -12,7 +12,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { CustomDirectiveDirective } from '../custom-directive.directive';
 import { CustomPipePipe } from '../custom-pipe.pipe';
 import { LayoutComponent } from './layout/layout.component';
-
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,9 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

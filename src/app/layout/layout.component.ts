@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -8,10 +9,14 @@ import { MessageService } from '../message.service';
 export class LayoutComponent implements OnInit {
 
   mydata = '';
+  subscription: Subscription;
   constructor(private msg: MessageService) { }
 
   ngOnInit() {
-    this.msg.messageData.subscribe((data: string) => {
+    if(!!this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    this.subscription = this.msg.messageData.subscribe((data: string) => {
       alert('i m from layout');
       this.mydata = data;
     });
